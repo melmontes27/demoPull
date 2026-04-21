@@ -1,36 +1,25 @@
 using System;
-//Class persona
-public class Persona 
+class Personaje 
 {
-    public string Nombre{get; set;}
-    public int Edad {get; set;}
-    //metodo saludar
-    public void Saludar ()
+    public string nombre;
+    public int puntos;
+    public Personaje(string NombreInicial, int PuntosInicial)
     {
-        Console.WriteLine($"Hola {Nombre} como estas, tengo {Edad}");
+        nombre  = NombreInicial;
+        puntos=PuntosInicial;
+        Console.WriteLine("El personaje "+nombre+" ha sido creado");
+    }
+    public void Saludar()
+    {
+        Console.WriteLine(nombre+" tiene "+puntos+" puntos.");
     }
     
 }
-//Class alumno hereda persona
-public class Alumno : Persona
+class Program
 {
-    public string Matricula {get; set;}
-    //metodo
-    public void Estudiar ()
+    static void Main()
     {
-        Console.WriteLine();
+        Personaje heroe=new Personaje("Fulano", 1060);
+        heroe.Saludar();
     }
 }
-//Class profesor hereda persona
-public class Profesor : Persona
-{
-    public string Especialidad {get; set;}
-    //metodo
-    public void Ensenar ()
-    {
-        Console.WriteLine();
-    }
-}
-
-class Program 
-{
