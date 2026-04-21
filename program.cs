@@ -1,25 +1,36 @@
 using System;
-using System.Collections.Generic;
-
-class Producto
+//Class persona
+public class Persona 
 {
-    public string Nombre {get; set;}
-}
-
-class Program
-{
-    static void Main()
+    public string Nombre{get; set;}
+    public int Edad {get; set;}
+    //metodo saludar
+    public void Saludar ()
     {
-        List<Producto> productos=new List<Producto>();
-        
-        productos.Add(new Producto { Nombre = "Mouse"});
-        productos.Add(new Producto { Nombre = "Teclado"});
-        productos.Add(new Producto { Nombre = "Monitor"});
-        
-        Console.WriteLine("Lista: ");
-        foreach (var p in productos)
-        {
-            Console.WriteLine(p.Nombre);
-        }
+        Console.WriteLine($"Hola {Nombre} como estas, tengo {Edad}");
+    }
+    
+}
+//Class alumno hereda persona
+public class Alumno : Persona
+{
+    public string Matricula {get; set;}
+    //metodo
+    public void Estudiar ()
+    {
+        Console.WriteLine();
     }
 }
+//Class profesor hereda persona
+public class Profesor : Persona
+{
+    public string Especialidad {get; set;}
+    //metodo
+    public void Ensenar ()
+    {
+        Console.WriteLine();
+    }
+}
+
+class Program 
+{
